@@ -4,7 +4,9 @@ import strutils
 
 proc loadEnv*(filename: string = ".env", upperKeys: bool = true) =
   ## loadEnv loads the '.env' file and parses it to the environment variables to be accessible
+  ## 
   ##   filename = custom .env filename, defaults to .env
+  ## 
   ##   upperKeys = environment variables will be capitalized, defaults to true
 
   var f: File
