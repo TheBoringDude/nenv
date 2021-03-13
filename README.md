@@ -14,6 +14,13 @@ import os
 loadEnv()
 
 echo getEnv("HELLO")
+
+# get values in their respective types
+# .. these functions will throw ValueError if 
+# ..  their values can't be parsed
+echo typeof getEnvInt("NUM")
+echo typeof getEnvFloat("DECIMAL")
+echo typeof getEnvBool("BOOL")
 ```
 
 ### &copy; TheBoringDude

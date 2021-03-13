@@ -1,5 +1,10 @@
-import os
-import strutils
+import std/[os, strutils]
+
+# TODO: Implement error handling on custom functions
+proc getEnvStr*(key: string): string = getEnv(key) ## get env value and convert to string
+proc getEnvInt*(key: string): int = parseInt(getEnv(key)) ## convert getEnv value to int
+proc getEnvFloat*(key: string): float = parseFloat(getEnv(key)) ## convert getEnv value to float
+proc getEnvBool*(key: string): bool = parseBool(getEnv(key)) ## convert getEnv value to bool
 
 
 proc loadEnv*(filename: string = ".env", upperKeys: bool = true) =
@@ -24,3 +29,4 @@ proc loadEnv*(filename: string = ".env", upperKeys: bool = true) =
 
   
   defer: f.close()
+
